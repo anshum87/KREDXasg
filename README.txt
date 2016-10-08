@@ -2,15 +2,13 @@
 Setup:
 
 Extract the finefoods.txt.gz into
-...\kredxAsg\MyApp\MyApp\data\foods.txt
+....\MyApp\MyApp\data\foods.txt
 
 For web server:
 Install flask which is a python based web framework
 http://flask.pocoo.org/
 If you have pip package manager for python simply type
 pip install Flask
-
-
 
 For testing:
 
@@ -44,6 +42,7 @@ file:///F:/work/kredxAsg/Client/form.html
 You need to first press the 'Initialise Data Sources' button to read the
 foods.txt file from disk and build the index.
 you can also go the location http://localhost:5000/InitDataSources to do the same thing
+This could take some time..so be patient
 
 
 The list of indices of the records that we use are read from this file:
@@ -76,9 +75,10 @@ For load-testing
 
 Install siege and generate random set of queries
 Here is 1 run of siege with results
+(use random_queries_imp.txt for the Improved api..see below)
 
-C:\siege-windows>siege -t100s -c50 --file=F:\work\kredxAsg\MyApp\MyApp\data\rand
-om_queries.txt > myquerystats.txt
+C:\siege-windows>siege -t100s -c50 -i --file=F:\work\kredxAsg\MyApp\MyApp\data\r
+andom_queries.txt > myquerystats.txt
 cygwin warning:
   MS-DOS style path detected: F:\work\kredxAsg\MyApp\MyApp\data\random_queries.t
 xt
@@ -93,17 +93,17 @@ The server is now under siege...
 
 Lifting the server siege..      done.
 
-Transactions:                   5724 hits
+Transactions:                   6661 hits
 Availability:                 100.00 %
-Elapsed time:                  99.04 secs
-Data transferred:             180.37 MB
-Response time:                  0.37 secs
-Transaction rate:              57.79 trans/sec
-Throughput:                     1.82 MB/sec
-Concurrency:                   21.39
-Successful transactions:        5724
+Elapsed time:                 100.81 secs
+Data transferred:             210.23 MB
+Response time:                  0.26 secs
+Transaction rate:              66.07 trans/sec
+Throughput:                     2.09 MB/sec
+Concurrency:                   17.05
+Successful transactions:        6661
 Failed transactions:               0
-Longest transaction:            1.55
+Longest transaction:            1.63
 Shortest transaction:           0.00
 
 
@@ -119,11 +119,6 @@ results.
 
 The second REST api can be accessed like :
 http://localhost:5000/topMatchingDocsImproved?count=10&query=Relatively,Nine,truths,funerals
-
-
-I don't have AWS subscription right now and it takes time to activate.
-Also I have never used it before so have no idea what it would take to get
-it running.
 
 
 
