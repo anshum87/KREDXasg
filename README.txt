@@ -1,4 +1,6 @@
 
+This is for the KredX interview.
+
 Setup:
 
 Extract the finefoods.txt.gz into
